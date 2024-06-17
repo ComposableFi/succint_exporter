@@ -15,7 +15,6 @@ type Organization struct {
 	OrgName   string `json:"org_name"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
-	Edges     string `json:"edges"`
 }
 
 type Project struct {
