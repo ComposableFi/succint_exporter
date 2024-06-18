@@ -80,6 +80,8 @@ func (c *SuccintCollector) Collect(ch chan<- prometheus.Metric) {
 		return
 	}
 
+	fmt.Printf("%+v\n", proofs)
+
 	c.processMetrics(proofs, ch)
 
 	level.Debug(c.logger).Log("msg", "Stopped metrics collection")
