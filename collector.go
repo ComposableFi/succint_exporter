@@ -77,10 +77,9 @@ func (c *SuccintCollector) Collect(ch chan<- prometheus.Metric) {
 	var proofs []SuccintProof
 	if err := json.Unmarshal(body, &proofs); err != nil {
 		level.Error(c.logger).Log("msg", "Error parsing JSON", "err", err)
+		fmt.Printf("%+v\n", proofs)
 		return
 	}
-
-	fmt.Printf("%+v\n", proofs)
 
 	c.processMetrics(proofs, ch)
 
