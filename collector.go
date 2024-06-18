@@ -59,7 +59,7 @@ func (c *SuccintCollector) Collect(ch chan<- prometheus.Metric) {
 
 	level.Debug(c.logger).Log("msg", "Started metrics collection")
 
-	succintUrl := fmt.Sprintf("https://alpha.succinct.xyz/api/proofs?project=%s&limit=0&offset=0&status=all", *succintProject)
+	succintUrl := fmt.Sprintf("https://alpha.succinct.xyz/api/proofs?project=%s&limit=10&offset=0&status=all", *succintProject)
 	level.Debug(c.logger).Log("msg", "Calling url: ", "succintUrl", succintUrl)
 	response, err := http.Get(succintUrl)
 	if err != nil {
